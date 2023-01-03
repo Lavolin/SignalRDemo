@@ -29,7 +29,7 @@ namespace CoffeeDemo.Services
             return indexes.Count;
         }
 
-        public CheckResult GetOrded(int orderId) 
+        public CheckResult GetUpdate(int orderId) 
         {
             Thread.Sleep(1000);
 
