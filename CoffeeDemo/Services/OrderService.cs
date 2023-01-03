@@ -23,7 +23,7 @@ namespace CoffeeDemo.Services
             indexes = new List<int>();
         }
 
-        public int NewOrded()
+        public int NewOrder()
         {
             indexes.Add(0);
             return indexes.Count;

@@ -1,7 +1,13 @@
+using CoffeeDemo.Hubs;
+using CoffeeDemo.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddSignalR()
+    .AddMessagePackProtocol();
+builder.Services.AddSingleton<OrderService>(); // needed to remember the indexes of the list
 
 var app = builder.Build();
 
@@ -23,5 +29,7 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+app.MapHub<CoffeeHub>("/coffeehub");
 
 app.Run();
