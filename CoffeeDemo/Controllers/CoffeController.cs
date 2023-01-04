@@ -23,9 +23,9 @@ namespace CoffeeDemo.Controllers
         [HttpPost]
         public async Task<IActionResult> OrderCoffee([FromBody] Order order)
         {
-            await coffeeHub.Clients.All.SendAsync("NewOrder", order);
+            await this.coffeeHub.Clients.All.SendAsync("NewOrder", order);
 
-            var orderId = orderService.NewOrder();
+            var orderId = this.orderService.NewOrder();
 
             return Accepted(orderId);
         }
