@@ -6,13 +6,13 @@ using Microsoft.AspNetCore.SignalR;
 
 namespace CoffeeDemo.Controllers
 {
-    public class CoffeController : Controller
+    public class CoffeeController : Controller
     {
         private readonly OrderService orderService;
 
         private readonly IHubContext<CoffeeHub> coffeeHub;
 
-        public CoffeController(
+        public CoffeeController(
             OrderService orderService, 
             IHubContext<CoffeeHub> coffeeHub)
         {
